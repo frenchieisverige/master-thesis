@@ -1,0 +1,35 @@
+Install truffle
+---------------
+
+sudo npm install -g truffle
+
+Generating & Editing a smart contract
+-------------------------------------
+
+mkdir myFolder
+cd myFolder
+truffle init
+cd contracts
+rm ConvertLib.sol MetaCoin.sol
+nano SmartContract.sol
+cd ../migrations 
+nano 2_deploy_contracts 
+
+module.exports = function(deployer) {
+deployer.deploy(SmartContract);
+};
+
+cd ../
+nano truffle.js
+
+  rpc: {
+/*  host: "localhost",
+    port: 8545
+*/
+    host: "i-st-02.informatik.hs-ulm.de",
+    port: 4011	
+  }
+
+truffle compile
+truffle serve
+

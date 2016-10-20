@@ -1,0 +1,30 @@
+Install NodeJS
+--------------
+
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install -y build-essential
+
+Install NPM
+-----------
+
+curl -L https://www.npmjs.com/install.sh | sh
+
+Install Electron
+----------------
+
+sudo curl -L https://www.npmjs.com/install.sh | sh
+
+Install Gulp
+------------
+
+sudo npm install gulp -g
+
+Install Mist browser
+--------------------
+
+git clone https://github.com/ethereum/mist.git
+cd mist
+git submodule update --init
+npm install
+gulp update-nodes
