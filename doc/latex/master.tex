@@ -1,53 +1,34 @@
 % ------------------------------------------------------------------------
-%
-% Wertvolle Links im Internet
-%
-% - http://www.weinelt.de/latex/index.html
-% - google: guide to latex canterbury pdf
-% - http://texlipse.sourceforge.net/
-%
-% - LaTeX auf Wikipedia
-%
-% - http://www.miktex.org/	fur Windows
-% - http://www.lyx.org/		grafische Oberflache
-%
-%
-% Hinweise zur Zeichensatzkodierung:
-% 
-% - heute ublicherweise utf-8 (Umgebungsvariable LANG=de_DE.UTF8)
-% - fruher ublicherweise latin1 / ISO88591
-% => Zeichensatzeinstellung muss passen !
-%
-% Konvertierung von utf-8 nach latin1:
-%    iconv -f utf-8 -t latin1 methode.tex >> methode-neu.tex
-% Konvertierung von latin1 nach utf-8:
-%    iconv -f latin1 -t utf-8 methode.tex >> methode-neu.tex
-%
+% Name: Master
+% Author: Emmanuel SCHWARTZ
+% Date: November 2016
+% Description: Main piece of my master thesis paper
 % ------------------------------------------------------------------------
 
 \documentclass[11pt,twoside,a4paper]{book}
 
-\usepackage{a4wide}			% bessere Randeinstellung
-\usepackage[pdftex]{graphicx}		% Einbinden von Grafiken
-\usepackage{url}			% einfache Eingabe von URLs
-\usepackage{longtable}			% Tabelle auch uber mehrere Seiten
-\usepackage{latexsym}			% diverse Spezialsymbole
-\usepackage{pifont}			% diverse Spezialsymbole
-\usepackage{setspace}			% Beeinflussung Zeilenabstand
-
-%\usepackage{times}          % Fonts
-
-\usepackage{nth}             % 1st, 2nd corecctly formatted
+\usepackage{a4wide}			                   % Margin settings
+\usepackage[pdftex]{graphicx}		           % Graphics
+\usepackage{url}			                   % Easy input for URLs
+\usepackage{longtable}			               % Tables over several pages
+\usepackage{latexsym}			               % Special Symbols
+\usepackage{pifont}			                   % Special Symbols
+\usepackage{setspace}			               % line spacing
+%\usepackage{times}                            % Fonts
+\usepackage{nth}                               % 1st, 2nd corecctly formatted
 \usepackage[nodayofweek,level]{datetime}       %date
-\newcommand{\mydate}{\formatdate{3}{4}{2017}}  % date	
+
 
 \begin{document}
 
 % ------------------------------------------------------------------------
-% einige hilfreiche Definitionen
+% Definitions
 % ------------------------------------------------------------------------
 \newtheorem{lemma}{Lemma}
 \newtheorem{definition}{Definition}
+
+%%% defines my date 
+\newcommand{\mydate}{\formatdate{3}{4}{2017}} 	
 
 %%% defines the QED square and the proof environment
 \def\QED{~\rule[-1pt]{5pt}{5pt}\par\medskip}
@@ -58,12 +39,12 @@
 
 \def\HORZBOT{\\[1ex]\rule{\linewidth}{0.4mm}}
 
-\setcounter{totalnumber}{5}		% maximale Anzahl von Gleitobjekten / Seite
-\setcounter{tocdepth}{3}		% Gliederungstiefe im Inhaltsverzeichnis
-\setcounter{secnumdepth}{3}		% Numerierungstiefe
+\setcounter{totalnumber}{5}		% Maximum number of floating objects/page
+\setcounter{tocdepth}{3}		% Outline depth in the table of contents
+\setcounter{secnumdepth}{3}		% Numbering depth
 
 % ------------------------------------------------------------------------
-% Titelseite
+% Cover Page
 % ------------------------------------------------------------------------
 \pagestyle{empty}
 
@@ -89,15 +70,16 @@ Document Management
 
 \begin{large}
 Master's thesis at the \\
-Hochschule Ulm \\
-Computer Science Department \\
-Master Information Systems
+University of Applied Sciences Ulm \\
+Department of Computer Science \\
+Degree Course Information Systems
 
 \vspace*{1cm}
 
 submitted by
 
 {\bfseries Emmanuel SCHWARTZ}
+\\Mat.-Nr: 3119342
 
 \vspace*{2cm}
 
@@ -119,7 +101,7 @@ April 2017
 \end{onehalfspacing}
 
 % ------------------------------------------------------------------------
-%
+% Declaration of Originality
 % ------------------------------------------------------------------------
 \chapter*{Declaration of Originality}
 
@@ -139,7 +121,7 @@ otherwise indicated. I have only used the resources given in the list of referen
 \end{tabular*}
 
 % ------------------------------------------------------------------------
-%
+% Abstract & Acknowledgements
 % ------------------------------------------------------------------------
 \chapter*{Abstract}
 
@@ -150,7 +132,7 @@ otherwise indicated. I have only used the resources given in the list of referen
 \input acknowledgements
 
 % ------------------------------------------------------------------------
-%
+% Table of contents
 % ------------------------------------------------------------------------
 \tableofcontents
 
@@ -159,12 +141,12 @@ otherwise indicated. I have only used the resources given in the list of referen
 \pagestyle{headings}
 
 % ------------------------------------------------------------------------
-%
+% Thesis Material
 % ------------------------------------------------------------------------
 \chapter{Introduction}\label{chap:introduction}
 \input introduction
 
-\chapter{Related Work}
+\chapter{Related Work and Basic Principles}
 \input relatedwork
 
 \chapter{Method}
@@ -176,18 +158,17 @@ otherwise indicated. I have only used the resources given in the list of referen
 \chapter{Conclusion and Future Work}
 \input conclusion
 
-
 % ------------------------------------------------------------------------
-%
+% List of figures & tables
 % ------------------------------------------------------------------------
 \listoffigures
 \listoftables
 
 % ------------------------------------------------------------------------
-%
+% Bibliography
 % ------------------------------------------------------------------------
 \bibliographystyle{alpha}
-\bibliography{literatur}
+\bibliography{literature}
 
 \end{document}
 
