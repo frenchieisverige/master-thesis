@@ -17,7 +17,8 @@
 %\usepackage{times}                            % Fonts
 \usepackage{nth}                               % 1st, 2nd corecctly formatted
 \usepackage[nodayofweek,level]{datetime}       %date
-
+\usepackage{listings}                          % URNs styling
+\usepackage{verbatim}                          % URNs styling
 
 \begin{document}
 
