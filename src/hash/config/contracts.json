@@ -1,0 +1,12 @@
+{
+  "default": {
+    "gas": "auto",
+    "contracts": {
+      "StoreInt": {
+        "args": [
+          100
+        ]
+      }
+    }
+  }
+}
