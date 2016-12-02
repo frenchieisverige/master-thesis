@@ -1,23 +1,27 @@
 {
-  "0x5ad36efa1e8e9b0a9d17813b4a0ae7e471acda6af1bfe8c50cb6ea1189f07def": {
+  "0x91e6f49ce2f1283f0517ba8995e5419e484408294705eb259413128cb7cb1baf": {
     "name": "development",
     "contracts": {
-      "01e71533cb070959025f77a95cfd9d126b7b0c7b42c20383b7a2cb461ea57a0a": {
-        "address": "0xa4bad8b871aadcccc15b1453748bc57b0956a2a6",
-        "name":    "StoreInt"
+      "9fcee5f2acecbba3172544d723974b21c1218aa90d73c4fdfb0537d35bbd86c6": {
+        "address": "0x25446514f345e3bc7d1201c2a53dd744bcd3377b",
+        "name":    "Provider"
       },
       "bcb429b7bd47fd7177c58fc89264b19d14092a5b80065785e87a82058a4b7580": {
-        "address": "0x618aff7a9fcac9420f98a934310d831c819bdfbf",
-        "name":    "StoreInt"
+        "address": "0x503dfa35d62b7cb4e5b7f916d9d65caefd6f756b",
+        "name":    "SimpleStorage"
+      },
+      "f0c9069068e9b72647ca1af2fb8fd9601052768ae3ec608f5330177425e73832": {
+        "address": "0xdad2ca70689cc6e4bb7cfde0878c19396c0b65ba",
+        "name":    "Provider"
       }
     }
   },
-  "0x6afbef54fa603284668c3d496461b0dd87a2a1e4a2fbc5bc67f04038a79d7457": {
+  "0xf8832031eac3a41bdcff790578458d9cc7dd22b5707d66219487fd01d427896a": {
     "name": "development",
     "contracts": {
       "bcb429b7bd47fd7177c58fc89264b19d14092a5b80065785e87a82058a4b7580": {
-        "address": "0x5a65960924c829aaba96c1c9bfc632984493b53b",
-        "name":    "StoreInt"
+        "address": "0x175181e6125a14381570f5cab22c7cb000e131f1",
+        "name":    "SimpleStorage"
       }
     }
   }

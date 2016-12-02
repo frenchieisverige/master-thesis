@@ -2,9 +2,9 @@
   "default": {
     "gas": "auto",
     "contracts": {
-      "StoreInt": {
+      "Provider": {
         "args": [
-          100
+          "Microsoft"
         ]
       }
     }
