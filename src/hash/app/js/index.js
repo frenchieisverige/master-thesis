@@ -23,6 +23,7 @@ function getTransactionsByAccount(myaccount, startBlockNumber, endBlockNumber) {
     if (block != null && block.transactions != null) {
       block.transactions.forEach( function(e) {
         if (myaccount == "*" || myaccount == e.from || myaccount == e.to) {
+          
           $("#divTransactionsResult").append("<p>"+"  tx hash          : " + e.hash + "<br>"
             + "   nonce           : " + e.nonce + "<br>"
             + "   blockHash       : " + e.blockHash + "<br>"
@@ -34,7 +35,20 @@ function getTransactionsByAccount(myaccount, startBlockNumber, endBlockNumber) {
             + "   time            : " + block.timestamp + " " + new Date(block.timestamp * 1000).toGMTString() + "<br>"
             + "   gasPrice        : " + e.gasPrice + "<br>"
             + "   gas             : " + e.gas + "<br>"
-            + "   input           : " + e.input)+"</p>"; 
+            + "   input           : " + e.input)+"</p>";
+
+            // console.log("  tx hash          : " + e.hash + "\n"
+            // + "   nonce           : " + e.nonce + "\n"
+            // + "   blockHash       : " + e.blockHash + "\n"
+            // + "   blockNumber     : " + e.blockNumber + "\n"
+            // + "   transactionIndex: " + e.transactionIndex + "\n"
+            // + "   from            : " + e.from + "\n" 
+            // + "   to              : " + e.to + "\n"
+            // + "   value           : " + e.value + "\n"
+            // + "   time            : " + block.timestamp + " " + new Date(block.timestamp * 1000).toGMTString() + "\n"
+            // + "   gasPrice        : " + e.gasPrice + "\n"
+            // + "   gas             : " + e.gas + "\n"
+            // + "   input           : " + e.input)+"\n"; 
         }
       })
     }

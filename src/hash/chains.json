@@ -1,4 +1,13 @@
 {
+  "0x8a0b1da86abbbd4abb4b83adcbcde149d7688febc66af0f0019b9a6d3725b5b2": {
+    "name": "development",
+    "contracts": {
+      "9fcee5f2acecbba3172544d723974b21c1218aa90d73c4fdfb0537d35bbd86c6": {
+        "address": "0x0101b80dad8e75e18deef16d96a60a98079ebcaf",
+        "name":    "Provider"
+      }
+    }
+  },
   "0x91e6f49ce2f1283f0517ba8995e5419e484408294705eb259413128cb7cb1baf": {
     "name": "development",
     "contracts": {
