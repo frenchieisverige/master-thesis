@@ -1,4 +1,17 @@
 {
+  "0x4a2b72d20c97075238f6905c11b35a2bc7ae15db9c52ce9ef24f382195da0621": {
+    "name": "development",
+    "contracts": {
+      "5857fa788826fc72d7fe3eba04988bf0173fe0395c0a796d758c942ae9325b39": {
+        "address": "0x5768ecb0c3f9fbe88e408f43df2615691493b6a2",
+        "name":    "StoreInt"
+      },
+      "9fcee5f2acecbba3172544d723974b21c1218aa90d73c4fdfb0537d35bbd86c6": {
+        "address": "0x8a75d60655840956a6e7b708838421b3020400d4",
+        "name":    "Provider"
+      }
+    }
+  },
   "0x8a0b1da86abbbd4abb4b83adcbcde149d7688febc66af0f0019b9a6d3725b5b2": {
     "name": "development",
     "contracts": {
