@@ -1,0 +1,1 @@
+mv go-ipfs/ipfs /usr/local/bin/ipfs
