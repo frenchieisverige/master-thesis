@@ -6,8 +6,6 @@
 % ------------------------------------------------------------------------
 
 \section{Motivation}
-
-Reasons why we decided to work on this topic
 \paragraph{}
 It is often considered that the history of electronic mail (or e-mail) begins in 1965, at a time when the Internet did not even exist yet. By that time, the first exchanges of messages was only possible between users on private networks were set up. One of the first systems to allow message exchange was the Competent Time-Sharing System (CTSS) of the famous Massachusetts Institute of Technology (MIT), although this paternity has also been claimed by System Development Corporation SDC) and its own Time-Sharing System created for the Q32, a computer specially manufactured by IBM for the US Air Force.
 \paragraph{}
@@ -16,26 +14,29 @@ Tomlinson found a way for the program to easily differentiate a local message fr
 \paragraph{}
 The email was so successful that it quickly became unthinkable for users of the ARPAnet network to do without it. As a result, the software quickly became the "killer app"  of the ARPAnet network, and developers focused either on improving the program and its transfer protocol, or creating their own solutions. In 1992, a great improvment was made: the world's first-ever email attachment, sent by the researcher Nathaniel Borenstein, where we could see a adorable photo of his barbershop quartet, The Telephone Chords. This was made possible thanks to MIME (Multipurpose Internet Mail Extensions),a internet standard that extends the data format of e-mails.
 \paragraph{}
-Fourty years later, despite the creation of Instant Messaging, or some years later, social networks, e-mails are still very popular: 183 billion of them are sent every day! If e-mails spam remains a major problem, e-mails has to face new challenges: Reliability \& Privacy. 
+Fourty years later, despite the creation of Instant Messaging, or some years later, social networks, e-mails are still very popular: 183 billion of them are sent every day! If e-mails spam remains a major problem, e-mails has to face new challenges: \textbf{Reliability} \& \textbf{Privacy}. 
 \paragraph{}
 When a person is sending an e-mail, she expects that her message will be received successfully by the
 intended recipient. For most cases, it does, but sometimes, for the following reasons, it does not:
 \begin{easylist}[enumerate]
-\ListProperties(Hide=100, Hang=false, Progressive=3ex, Style*=-- ,
-Style2*=$\bullet$ ,Style3*=$\circ$ ,Style4*=\tiny$\blacksquare$ )
-
+\ListProperties(Hide=100, Hang=false, Progressive=3ex, Style*=--)
 & The design of e-mail: Two users does not have to be online at the same time in order to communicate. This is called asynchronious communications. This is made possible by the mail servers, accepting messages from sources and attempt to relay them towards, or deliver them to, the recipient. In order to do so, e-mails have to jump from an server to an other: Some e-mails might get lost during these operations, for various reasons (busy servers, e-mails deferral, rejected e-mails)
-
 & The exponential groth of e-mail spam has forced the use of e-mail rejection, intended to identify and separate legitimate e-mails from junk e-mails. Unfortunately, this has turned out into a false positive problem: Some legimate e-mails are considered as junk, this means the user thinks he did not receive the e-mail.
 Some solutions try to solve these problems such as RE: Reliable Email[*], which tries to create an intelligent filter for e-mails, or tools that responds automatically to undeliverability by persisting with retransmission or retransmitting to alternate recipients [*]
 \end{easylist}
 \paragraph{}
-Alongside with reliability, e-mail is facing one of the biggest challenges: Privacy. 
+Alongside with \textbf{reliability}, e-mail is facing one of the biggest challenges: \textbf{Privacy}. Since the shattering revelations of Edward Snowden, brigging to light the massive world surveillance by the U.S, people try to protect themselves by encypting their communications when possible. The famous free email application, Mozilla Thunderbird has an extension called EnigMail, which can encrypt e-mails thanks to OpenPGP. The downside is, that every user needs to have this add-ons installed, otherwise it will be not possible to read the e-mail that was intented for him. A solution could be that Thunderbird integrates directly this feature in his client, but is still not planned on the road map.
+But a recent piece of news[*] unviels that the IT-idustry giants such as Google, Microsoft, Yahoo!, LinkedIn and Comcast are working together to elaborate a new encrypted messaging protocol, named SMTP STS (Strict Transport Security)[*]. The idea is that a session starts in clear, and after the server announces that it supports the encrypted connection, the client can then switch to encryption mode, to avoid man-in-the-middle attack. Unfornately no released date was announced yet. 
+\paragraph{}
+Last downside of e-mails involves the user. Nowadays, it is common practice to send business documents via e-mail or via supplier\textquoteright s web portal: Faster and cheaper compared to a hard copy sent via post. But, how can a user successuffly order and sort out differents kinds of documents, coming from different mailboxes? In most cases, the user does not have a clue how to establish a \textbf{document management}: local storage? cloud storage? And what if the computer has hard drive failures, or is infected by viruses: Did they make regular back-ups?
+\paragraph{}
+With respect to the application senario described in the next section, this thesis will try to answer these problems with new upcoming technologies such as blockchains, decentralized storage and Dapps. 
  
 \section {Application Scenario}
-
-E-Mail case scenario.
-Thunderbird + EnigMail
+\paragraph{}
+ Even if the big actors of Internet are trying to adapt e-mails to nowadays requirements, e-mails might not be the right solution anymore to send buisiness documents. New technologies such as Bitcoin brought such as 
+\paragraph{}
+dzadazdazdzaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa a,	skla	sna	ksla	nskùla	sn	klù	naklsnlùks	nsla	ùsna	lksn	aùlsa	nskl	anslùk	ansl	ùasn	kalùsn	alùsn	aklùs	anlùs	anksùa	nslk	ansk	alùsna	lùsn	aklùsn	aklùsn	akl	anslka	nska	lns	lasn	ksn	kls	nska	lnsaklsnaklsnakslanskla	nskla	 nka	naklsnklsnkalnksal	sna	klsna	kslanska	lnsakls	anskla	ns	aklùsna	klsna	skl	ansa	kls	ankslnsa	kn ans	ksnak	sna	klsna	sùn	a nsa	klsnklsnalsùa	nslùa	nskla	ùsn	aklùsna	klsùnklsù	nsa	ksla	nsk	lsn lk	sanl	aùsn as	klsna	lks	as na	slka	nskl	ans	lùk
 
 \section{Objective}
 
