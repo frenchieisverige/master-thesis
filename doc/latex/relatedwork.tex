@@ -12,10 +12,61 @@
 
 \section{Basic Principles}
 
+\subsection{Reminder in Cryptography: Hash and Signature}
+\subsubsection{Hash Function}
+A hash function is an algorithm that generates a numeric, or fixed-size character output from a variable-sized piece of text or other data. An essential property is that it is practically impossible to reverse it: the hash of a datum by the function is calculated very efficiently, but the inverse calculation of an input hash to find a datum is infeasible. For this reason, such a function is said to be one-way.The input data is often called the message, and the output (the hash value or hash) is often called the message digest or simply the digest.
+\paragraph{}
+An ideal cryptographic hash function has the following four properties:
+\begin{easylist}[enumerate]
+\ListProperties(Hide=100, Hang=false, Progressive=3ex, Style*=--)
+& The hash value of a message is calculated very quickly
+& Two messages can't have the same footprint
+& It is impossible for a given hash value to construct a message having that hash value except by trying all possible messages
+& A small change to a message should change the hash value so extensively that the new hash value appears uncorrelated with the old hash value
+\end{easylist}
+\paragraph{}
+The most common hash functions are listed below:
+\begin{easylist}[enumerate]
+\ListProperties(Hide=100, Hang=false, Progressive=3ex, Style*=--)
+& MD4 and MD5 (Message Digest) were developed by Ron Rivest. MD5 produces 128-bit hashes by working the original data in blocks of 512 bits.
+& SHA-1 (Secure Hash Algorithm 1), like MD5, is based on MD4. It also operates from blocks of 512 bits of data and produces condensed bits of 160 bits at the output. It therefore requires more resources than MD5.[*]
+& SHA-2 (Secure Hash Algorithm 2) has been published recently and is intended to replace SHA-1. The main differences are in the possible chopping sizes: 256, 384, or 512 bits. It will soon be the new reference in terms of hash function.[*]
+& RIPEMD-160 (Ripe Message Digest) is the latest version of the RIPEMD algorithm. The previous version produced 128-bit digits but presented significant security flaws. The current version remains safe for now; It produces as the name indicates the condensed 160 bits. A final point concerning it is its relative greediness in terms of resources and in comparison with SHA-1 which is its main rival.
+\end{easylist}
+
+\begin{center}\begin{tabular}{|c|c|}
+\hline
+	Text & Hash(text)\\
+\hline
+	Here is a long text & f272bcf903\\
+\hline
+	Hello World! & d1be9c0ff4\\
+\hline
+	Hello World. & 0084a53e9d\\
+\hline
+	Hello World. & 0084a53e9d\\
+\hline
+\end{tabular}\end{center}
+
+\subsubsection{Signature}
+
+The digital signature[*] is a mechanism to guarantee the integrity of an electronic document and to authenticate the author by analogy with the handwritten signature of a paper document. It must allow the reader of a document to identify the person or organization that has affixed his / her signature. Moreover, a digital signature mechanism must have the following properties:
+\begin{easylist}[enumerate]
+\ListProperties(Hide=100, Hang=false, Progressive=3ex, Style*=--)
+& Authentic: the identity of the signatory must be able to be found with certainty
+& Forgery: the signature can not be falsified. Someone can not pretend to be another
+& Not reusable: the signature is not reusable. It is part of the signed document and can not be moved to another document.
+& Unalterable: A signed document is unalterable. Once it is signed, you can not change it
+& Irrevocable: the person who signed can not deny it
+\end{easylist}
+\textbf{
+Public  and private key
+Scheme}
+
+
 \subsection{Blockchains}
 In 2008, Bitcoin, the famous cryptocurrency was created, it brought at the same time a new concept: The system operates without central authority or single administrator, but in a decentralized way thanks to the consensus of all the nodes of the network. Based on this Idea, Ethere
 \subsubsection{What is a blockchain?}
-\subsubsection{Cryptography, Hash and Signature}
 \subsubsection{Transactions}
 \subsubsection{Proof of Work}
 \subsubsection{Merkle Tree}
