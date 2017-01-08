@@ -49,7 +49,7 @@ function getTransactionsByAccount(myaccount, startBlockNumber, endBlockNumber) {
 $(document).ready(function() {
 
   $("#walletButton").click(function() {
-    var account = $("#walletID").val();
+    var account = $("#walletText").val();
 console.log('Account: '+account);
     getTransactionsByAccount(account);	
   });
