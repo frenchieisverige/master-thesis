@@ -1,0 +1,12 @@
+{
+  "default": {
+    "gas": "auto",
+    "contracts": {
+      "Provider": {
+        "args": [
+          "Microsoft"
+        ]
+      }
+    }
+  }
+}

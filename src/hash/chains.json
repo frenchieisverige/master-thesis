@@ -1,4 +1,30 @@
 {
+  "0x1d30f319764e08e65cdacdb28fac36697f37c6583fec343259049b7762bab92d": {
+    "name": "development",
+    "contracts": {
+      "1af4184357a67dfaea960a01f1680cbb63ac331a88e3757a3e95bc60818bbd22": {
+        "address": "0xef89b58dd89654b28e1a1fb4c4b72425b378d7cb",
+        "name":    "Provider"
+      },
+      "ba51a88262cbc07723f8b0aa4de8c79697720b9ff3c6ee5e06a1af3cbf806ab1": {
+        "address": "0xbbd061c2e06844d8aaf6f74b99bbd52c951b669c",
+        "name":    "StoreInt"
+      }
+    }
+  },
+  "0x241174e20a331bfd3812a7599d310267e16f4211f7734cd92ef5890e4ed12597": {
+    "name": "development",
+    "contracts": {
+      "1af4184357a67dfaea960a01f1680cbb63ac331a88e3757a3e95bc60818bbd22": {
+        "address": "0xdb1cdb6007f7e8e6a28b8a11ff3c1a22b1c9e791",
+        "name":    "Provider"
+      },
+      "ba51a88262cbc07723f8b0aa4de8c79697720b9ff3c6ee5e06a1af3cbf806ab1": {
+        "address": "0xa6dc8356d3cd19f245973e04f43e67bbc19adb7e",
+        "name":    "StoreInt"
+      }
+    }
+  },
   "0x4a2b72d20c97075238f6905c11b35a2bc7ae15db9c52ce9ef24f382195da0621": {
     "name": "development",
     "contracts": {

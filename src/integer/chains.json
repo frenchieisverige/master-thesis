@@ -30,6 +30,15 @@
       }
     }
   },
+  "0xbb89f70cf140cfeaa17dc7936952a544dfcaa48c2c47d9861d57e8402b7f63a0": {
+    "name": "development",
+    "contracts": {
+      "cca917303b51aacb73f1b39b4a5d7ab82bd9167e5c23526c5ef9632af74b8f54": {
+        "address": "0x0fe4888594a9b33bbf1ac3e2f3c5cb71e25fec17",
+        "name":    "StoreInt"
+      }
+    }
+  },
   "0xf8832031eac3a41bdcff790578458d9cc7dd22b5707d66219487fd01d427896a": {
     "name": "development",
     "contracts": {
