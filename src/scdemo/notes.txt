@@ -1,0 +1,13 @@
+ node directoryDeployment.js 0x0000000000000000000000000000000000000000 userWallet
+
+node documentDeployment.js userWallet 0x0000000000000000000000000000000000000000 /home/visy/documents/HelloWorld#1.pdf jia dirAddress
+
+user address
+
+
+dirContract
+
+
+documentContract
+
+
