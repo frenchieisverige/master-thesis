@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Document Wallet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="w3-container">
+            <ul class="w3-navbar w3-black">
+                <li><a href="#">Document Wallet</a></li>
+                <li><input id="walletID" type="text" class="w3-input w3-dark-grey" placeholder="Enter User SC Address.."></li>
+                <li><button id="walletButton" class="w3-btn w3-green">Go</button></li>
+		<li><button id="walletButton" class="w3-btn w3-green"><i class="glyphicon glyphicon-search"></i></button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        <div class="w3-responsive">
+            <table class="w3-table-all">
+                <thead>
+                    <tr class="w3-green">
+                        <th>From</th>
+                        <th>File</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+              <tbody id="transactions">
+              </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2016</p>
+    </footer>
+
+</body>
+
+</html>
