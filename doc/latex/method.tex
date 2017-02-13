@@ -4,7 +4,53 @@
 % Date: November 2016
 % Description: Method for my master thesis paper
 % ------------------------------------------------------------------------
-\subsection{Data Structure for Smart Contract}
+\subsection{Environment}
+
+\subsubsection{Network}
+\subsubsection{Programming}
+
+\subsection{Requirement Analysis}
+
+\subsubsection{Use cases}
+\subsubsection{Requirements}
+\subsubsection{Overall Requirements Examination}
+
+\subsection{Preliminary Investigations}
+- scan blockchain and send link via transaction
+\subsection{Potential Approache and Problems}
+- IPFS with DB
+- scan all blockchain
+\subsection{Proposal Approach}
+
+\subsubsection{EBNF/BNF}
+
+\begin{verbatim}
+<urn>::= <prefix>:<provider>
+<prefix>::= urn:x-docs
+<provider>::= <storj>|<ipfs>|<azure>|<amazon>|<GDrive>|<Dropbox>|<OwnCloud>
+
+<storj>::= ???
+<ipfs>::= ipns:<DHTHash>:<FilePath>
+<azure>::= ???
+<amazon>::= arn:aws:s3:::mybucket/photo.png
+<GDrive>::= ???
+<Dropbox>::= ???
+<OwnCloud>::= ???
+\end{verbatim}
+
+\subsubsection{URN/RFC}
+
+2 ways to register:
+formal ID:\\
+are assigned by the IETF consensus / reviewed by a lot of people to be standartized / takes a long time
+informal ID: \\
+are assigned with a number as an identifier (eg: "urn-<number>") \\
+takes 2 weeks disccusion after the sending of the registration paper (urn-nid@apps.ietf.org)
+\\
+\\
+use X- (eg: usn:x-docs:)
+
+\subsubsection{Data Structure for Smart Contract}
 
 \begin{tabular}{|l|l|}
 \hline
@@ -28,32 +74,4 @@
 \hline
 \end{tabular}
 
-
-
-\subsection{EBNF/BNF}
-
-\begin{verbatim}
-<urn>::= <prefix>:<provider>
-<prefix>::= urn:x-docs
-<provider>::= <storj>|<ipfs>|<azure>|<amazon>|<GDrive>|<Dropbox>|<OwnCloud>
-
-<storj>::= ???
-<ipfs>::= ipns:<DHTHash>:<FilePath>
-<azure>::= ???
-<amazon>::= arn:aws:s3:::mybucket/photo.png
-<GDrive>::= ???
-<Dropbox>::= ???
-<OwnCloud>::= ???
-\end{verbatim}
-
-\subsection{URN/RFC}
-
-2 ways to register:
-formal ID:\\
-are assigned by the IETF consensus / reviewed by a lot of people to be standartized / takes a long time
-informal ID: \\
-are assigned with a number as an identifier (eg: "urn-<number>") \\
-takes 2 weeks disccusion after the sending of the registration paper (urn-nid@apps.ietf.org)
-\\
-\\
-use X- (eg: usn:x-docs:)
+\subsection{Activity Diagram / Software design}
