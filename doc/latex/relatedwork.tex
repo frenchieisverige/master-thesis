@@ -13,42 +13,55 @@
 
 \section{Basic Principles}
 
-\subsection{Reminder in Cryptography: Hash and Signature}
+\subsection{Reminders in Cryptography: Hash, Signature and Merkle tree}
 \subsubsection{Hash Function}
-A hash function is an algorithm that generates a numeric, or fixed-size character output from a variable-sized piece of text or other data (Figure 2.1). An essential property is that it is practically impossible to reverse it: the hash of a datum by the function is calculated very efficiently, but the inverse calculation of an input hash to find a datum is infeasible. For this reason, such a function is said to be one-way.The input data is often called the message, and the output (the hash value or hash) is often called the message digest or simply the digest.
 \paragraph{}
+A hash function is an algorithm that generates a numeric, or fixed-size character output from a variable-sized piece of text or other data (Figure 2.1). An essential property is that it is practically impossible to reverse it: the hash of a datum by the function is calculated very efficiently, but the inverse calculation of an input hash to find a datum is infeasible. For this reason, such a function is said to be one-way.The input data is often called the message, and the output (the hash value or hash) is often called the message digest or simply the digest.
+
+\paragraph{}
+{\setlength{\parindent}{0cm}
 An ideal cryptographic hash function has the following four properties:
-\begin{easylist}[enumerate]
-\ListProperties(Hide=100, Hang=false, Progressive=3ex, Style*=--)
-& The hash value of a message is calculated very quickly
-& Two messages can't have the same footprint
-& It is impossible for a given hash value to construct a message having that hash value except by trying all possible messages
-& A small change to a message should change the hash value so extensively that the new hash value appears uncorrelated with the old hash value
-\end{easylist}
+}
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+
+  \item Collision resistant: It is hard to find for a given \emph{m1} any \emph{m2} with \emph{H(m1) = H(m2)}. Two messages can't have the same footprint.
+  \item Non-reversible: It is hard to find \emph{m} given \emph{H(m)}. It is impossible for a given hash value to construct a message having that hash value except by trying all possible messages.
+  \item Fast: The hash value of a message is calculated very quickly
+  \item Unique: A small change to a message should change the hash value so extensively that the new hash value appears uncorrelated with the old hash value.
+
+\end{itemize}
+
 \paragraph{}
 The most common hash functions are listed below:
-\begin{easylist}[enumerate]
-\ListProperties(Hide=100, Hang=false, Progressive=3ex, Style*=--)
-& MD4 and MD5 (Message Digest) were developed by Ron Rivest. MD5 produces 128-bit hashes by working the original data in blocks of 512 bits.
-& SHA-1 (Secure Hash Algorithm 1), like MD5, is based on MD4. It also operates from blocks of 512 bits of data and produces condensed bits of 160 bits at the output. It therefore requires more resources than MD5.[*]
-& SHA-2 (Secure Hash Algorithm 2) has been published recently and is intended to replace SHA-1. The main differences are in the possible chopping sizes: 256, 384, or 512 bits. It will soon be the new reference in terms of hash function.[*]
-& RIPEMD-160 (Ripe Message Digest) is the latest version of the RIPEMD algorithm. The previous version produced 128-bit digits but presented significant security flaws. The current version remains safe for now; It produces as the name indicates the condensed 160 bits. A final point concerning it is its relative greediness in terms of resources and in comparison with SHA-1 which is its main rival.
-\end{easylist}
-\begin {figure}
+\begin{itemize}
+  \setlength\itemsep{0em}
+
+  \item MD4 and MD5 (Message Digest) were developed by Ron Rivest. MD5 produces 128-bit hashes by working the original data in blocks of 512 bits.
+  \item SHA-1 (Secure Hash Algorithm 1), like MD5, is based on MD4. It also operates from blocks of 512 bits of data and produces condensed bits of 160 bits at the output. It therefore requires more resources than MD5.[*]
+   \item SHA-2 (Secure Hash Algorithm 2) has been published recently and is intended to replace SHA-1. The main differences are in the possible chopping sizes: 256, 384, or 512 bits. It will soon be the new reference in terms of hash function.[*]
+  \item RIPEMD-160 (Ripe Message Digest) is the latest version of the RIPEMD algorithm. The previous version produced 128-bit digits but presented significant security flaws. The current version remains safe for now; It produces as the name indicates the condensed 160 bits. A final point concerning it is its relative greediness in terms of resources and in comparison with SHA-1 which is its main rival.
+\end{itemize}
+
+\paragraph{}
+\begin{figure}[!h]
 \begin{center}
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{|c|c|}
 \hline
-	Text & Hash(text)\\
+	text & hash(text)\\
 \hline
-	Here is a long text & f272bcf903\\
+	Here is a long text & faf3d315060c6b887e826e7a65992539e846233cea3f2e4cde4d9351b4f00193\\
 \hline
-	Hello World! & d1be9c0ff4\\
+	Hello World! & 7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069\\
 \hline
-	Hello World. & 0084a53e9d\\
+	Hello World. & f4bb1975bf1f81f76ce824f7536c1e101a8060a632a52289d530a6f600d52c92\\
 \hline
-	Hello World. & 0084a53e9d\\
+	Hello World. & f4bb1975bf1f81f76ce824f7536c1e101a8060a632a52289d530a6f600d52c92\\
 \hline
-\end{tabular}
+\end{tabular}%
+}
 \caption{Example of an hash function}
 \end{center}
 \end{figure}
@@ -56,14 +69,18 @@ The most common hash functions are listed below:
 \subsubsection{Signature}
 
 The digital signature[*] is a mechanism to guarantee the integrity of an electronic document and to authenticate the author by analogy with the handwritten signature of a paper document. It must allow the reader of a document to identify the person or organization that has affixed his/her signature. Moreover, a digital signature mechanism must have the following properties:
-\begin{easylist}[enumerate]
-\ListProperties(Hide=100, Hang=false, Progressive=3ex, Style*=--)
-& Authentic: the identity of the signatory must be able to be found with certainty
-& Forgery: the signature can not be falsified. Someone can not pretend to be another
-& Not reusable: the signature is not reusable. It is part of the signed document and can not be moved to another document.
-& Unalterable: A signed document is unalterable. Once it is signed, you can not change it
-& Irrevocable: the person who signed can not deny it
-\end{easylist}
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+
+  \item Authentic: the identity of the signatory must be able to be found with certainty
+  \item Forgery: the signature can not be falsified. Someone can not pretend to be another
+  \item Not reusable: the signature is not reusable. It is part of the signed document and can not be moved to another document.
+  \item Unalterable: A signed document is unalterable. Once it is signed, you can not change it
+  \item Irrevocable: the person who signed can not deny it
+
+\end{itemize}
+
 In order to sign a document, the common way to do it is to use keys. Each user has a pairs of keys: a public one, called PubKey, and a private key, nammed PrivKey.
 \begin{figure}[htp]
 \centering
@@ -72,9 +89,25 @@ In order to sign a document, the common way to do it is to use keys. Each user h
 \label{}
 \end{figure}
 
-\newpage
+\subsubsection{Merkle Tree}
+\paragraph{}
+Created in 1979 by Ralf Merkle, one of the pionner of the asymetrical cryptography, the Merkle tree, or hash tree, is data structure containing an information summary of a data volume, which are usually big. (see figure X.X).
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.50]{/home/emmanuel/Documents/masterThesis/doc/ressources/merkle.png}
+\caption{Merkel tree}
+\label{}
+\end{figure}
+\paragraph{}
+The principle of a hash tree consists of decomposing the input data into a set of blocks of identical size. These blocks are the leaves of the tree. They are usually completed with neutral values, such as zeros, so as to obtain blocks of the desired size. The higher level nodes are then obtained by compressing the nodes of the current level using a hash / compression function until only one node is obtained: the Merkle root hash.
+With this principle, the hash tree gives a unique footprint of all data. By just storing the root hash, it is very easy to large data comparaison by anylysing only the Merkle root hashes without the need to download these large data files. Moreover, it also can detect if a data has been modified. 
+\paragraph{}
+The field of applications of the Merkle tree are wide-spreaded going from Peer-2-Peer[*] networks to GIT[*] or even ZFS file system[*]
+
 \subsection{Blockchains}
-This section will dive into blockchains through the famous cryptocurrency: Bitcoin
+\paragraph{}
+This section will explain blockchains and its components in details through the famous cryptocurrency: Bitcoin.
+
 \subsubsection{What is a blockchain?}
 \paragraph{}
 Bitcoin brought with him a new concept: The system operates without central authority or single administrator, but in a decentralized way thanks to the consensus of all the nodes of the network, this means everynode have to reach an agreement in order to go to the next step. 
@@ -91,11 +124,14 @@ With this structure, blockchains are inherently resistant to modification of the
 
 \subsubsection{Transactions}
 A transaction is the record of transfering money from a person A to a person B, following these two easy but essential rules: 
-\begin{easylist}[enumerate]
-\ListProperties(Hide=100, Hang=false, Progressive=3ex, Style*=--)
-& It is only possible to transfer coins that we owned. A transaction, type "Pay" is done. 
-& Only miners can c 
-\end{easylist}
+\begin{itemize}
+  \setlength\itemsep{0em}
+
+  \item It is only possible to transfer coins that we owned, using transaction "Pay"
+  \item It is only miners that can create bitcoin, using a transaction "Coinbase"
+\end{itemize}
+
+
 -problem \#1: give coin at the same time 
 \newline
 -problem \#2: How can we split a coin 
@@ -103,7 +139,7 @@ A transaction is the record of transfering money from a person A to a person B, 
 -problem \#3: problem of the double spent 
 - propagation of a transaction to all the nodes
 \newline
-\subsubsection{Block \& Proof of Work}
+\subsubsection{Block}
 - detail of a block
 \newline
 - example of a block
@@ -117,10 +153,8 @@ A transaction is the record of transfering money from a person A to a person B, 
 - transaction every 10 mins
 \newline
 -how much transaction per block
-\subsubsection{Merkle Tree}
-- scheme merkel tree
-\newline
-- explanation
+\subsubsection{Miners \& Proof of Work}
+
 \subsubsection{Nounce}
 - complexity varies
 \newline
@@ -135,7 +169,7 @@ A transaction is the record of transfering money from a person A to a person B, 
 - Evolution of the difficulty
 \newline
 - problem of pool mining
-\subsection{Ethereum}
+\subsection{Ethereum: the 2.0 blockchain}
 \subsubsection{What is Ethereum?}
 - blockchain 2.0
 \newline
@@ -201,6 +235,9 @@ A transaction is the record of transfering money from a person A to a person B, 
 - asynchrone mode
 \newline
 \textbf{WHY DO WE DO THIS ?}
+
+\subsubsection{differences with bitcoin}
+blockchain state machine with transaction which modify the state
 \subsection{Decentralized Storage Providers}
 
 \subsubsection{IPFS}
@@ -209,7 +246,9 @@ A transaction is the record of transfering money from a person A to a person B, 
 
 \subsubsection{Dat-data}
 
+\subsubsection{Swarm}
 
+\subsubsection{Overall Requirements Examination}
 
 \subsection{Access control????}
 

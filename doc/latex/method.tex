@@ -9,12 +9,15 @@
 \subsubsection{Network}
 
 - Infastructure diagram (VM..)
+\\
 - Server specs?
+\\
 - Ubuntu 16.04 
 
 \subsubsection{Programming}
 
 - Ubuntu 16.04
+\\
 - Softwares: Geth; testRPC, ethereum JS, nodeJS , Embark 
 
 \subsection{Requirement Analysis}
@@ -22,16 +25,34 @@
 \subsubsection{Use cases}
 
 - User use case
+\\
 - Company use case
 \subsubsection{Requirements}
 
-- 
+- Upload a document to a decentralized storage provider
+\\
+- Choice between multiple providers
+\\
+- Use of smart contract to seal the deal between company and users
+\\
+- Privacy
+\\
+- Encryption of the document
+\\
+- Reliability: use of the blockchain (no need of backup)
+\\
+- Smooth user experience: update document wallet fast
+
+ 
 \subsubsection{Overall Requirements Examination}
 
 \subsection{Preliminary Investigations}
+- upload file to a traditional cloud provider + encyption
+\\
 - scan blockchain and send link via transaction
-\subsection{Potential Approache and Problems}
+\subsection{Potential Approaches and Problems}
 - IPFS with DB
+\\
 - scan all blockchain
 \subsection{Proposal Approach}
 
@@ -60,11 +81,13 @@ informal ID: \\
 are assigned with a number as an identifier (eg: "urn-<number>") \\
 takes 2 weeks disccusion after the sending of the registration paper (urn-nid@apps.ietf.org)
 \\
-\\
+
 use X- (eg: usn:x-docs:)
 
 \subsubsection{Data Structure for Smart Contract}
 
+\paragraph{Document}
+newline
 \begin{tabular}{|l|l|}
 \hline
 	Information to Store & Types in Solidity\\
@@ -86,5 +109,7 @@ use X- (eg: usn:x-docs:)
 	Verification of valid copy & ???\\
 \hline
 \end{tabular}
+\paragraph{Directory}
+\paragraph{User}
 
 \subsection{Activity Diagram / Software design}

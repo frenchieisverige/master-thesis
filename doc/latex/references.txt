@@ -1,0 +1,3 @@
+
+
+R.C. Merkle, « Protocols for public key cryptosystems, » In Proc. 1980 Symposium on Security and Privacy, IEEE Computer Society, pages 122-133, April 1980
