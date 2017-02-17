@@ -85,14 +85,14 @@ In order to sign a document, the common way to do it is to use keys. Each user h
 \begin{figure}[htp]
 \centering
 \includegraphics[scale=0.30]{/home/emmanuel/Documents/masterThesis/doc/ressources/signature.png}
-\caption{Digital signature diagram}
+\caption{Digital signature}
 \label{}
 \end{figure}
 
 \subsubsection{Merkle Tree}
 \paragraph{}
 Created in 1979 by Ralf Merkle, one of the pionner of the asymetrical cryptography, the Merkle tree, or hash tree, is data structure containing an information summary of a data volume, which are usually big. (see figure X.X).
-\begin{figure}[h!]
+\begin{figure}[!h]
 \centering
 \includegraphics[scale=0.50]{/home/emmanuel/Documents/masterThesis/doc/ressources/merkle.png}
 \caption{Merkel tree}
@@ -106,7 +106,7 @@ The field of applications of the Merkle tree are wide-spreaded going from Peer-2
 
 \subsection{Blockchains}
 \paragraph{}
-This section will explain blockchains and its components in details through the famous cryptocurrency: Bitcoin.
+This section will explain blockchains and its components in a global scope through the famous cryptocurrency: Bitcoin.
 
 \subsubsection{What is a blockchain?}
 \paragraph{}
@@ -123,28 +123,86 @@ A blockchain is a public ledger of all transactions that have ever been executed
 With this structure, blockchains are inherently resistant to modification of the data: Once recorded, the data in a block cannot be altered retroactively. Moreover, since it is working in a decentralized way, each node (e.g computer connected to the network) has and need to have a copy of all transactions. Therefore, it is easy to verify a transaction easily with this record since they are public.
 
 \subsubsection{Transactions}
+\paragraph{}
 A transaction is the record of transfering money from a person A to a person B, following these two easy but essential rules: 
 \begin{itemize}
   \setlength\itemsep{0em}
 
-  \item It is only possible to transfer coins that we owned, using transaction "Pay"
-  \item It is only miners that can create bitcoin, using a transaction "Coinbase"
+  \item It is only possible to transfer coins that we owned, using transaction \emph{Pay}
+  \item It is only miners that can create bitcoin, using a transaction \emph{Coinbase}
+\end{itemize}
+\paragraph{}
+\emph{Coinbase} and \emph{Pay} transactions are described in the following figure X.X. Bob is a miner, so he is allowed to create bitcoins. This creation of bitcoin is actually "Coinbase" transaction, signed by the private key (Kpriv) of Bob, to ensure its authenticity. Once Bob has this bitcoin to his possession, he can pay Alice one bitcoin, by creating a "Pay" transaction: First, Bob needs to point Alice's public key (Kpub) or wallet, reference the previous "Coinbase" transaction by its hash, and finnally sign this transaction by Bob's private key. Alice can now transfer this bitcoin to Eve, by excecuting the same "Pay" transaction steps. 
+\begin{figure}[!h]
+\centering
+\includegraphics[scale=0.40]{/home/emmanuel/Documents/masterThesis/doc/ressources/simple_transaction.png}
+\caption{1-coin transaction}
+\label{}
+\end{figure}
+
+\paragraph{}
+Then, these transactions are speaded to all nodes to the network, via the gossip protocol[*]. Each node has a copy of all transactions that are currently happening in the network. Moreover, the referencing of the previous transaction, allows any user to trace one bitcoin from its creation to his current position in a wallet.
+\paragraph{}
+However, a number of issues relevant to the functioning of transactions can be noticed: spending more than one bitcoin per transactions, spending non-round figure of bitcoin and the case of the double spent.
+\paragraph{}
+As mentioned earlier in this section, it is only possible to spend one bitcoin. The figure X.X shows that it is possible to reference multiple transacations in a \emph{Pay} transactions.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.40]{/home/emmanuel/Documents/masterThesis/doc/ressources/transaction_2coins.png}
+\caption{2-coin transaction}
+\label{}
+\end{figure} 
+After mining, Bob creates two \emph{CoinBase} transactions to himself, transfering two bitcoins to his wallet. In order to send two bitcoin to Alice, Bob points to its two previous \emph{Coinbase} transactions and sign this transaction.
+\paragraph{}
+The second problem - spending non-round figure of bitcoin - can be handled as shown in figure X.X. Let's assume Alice has received 2 bitcoins from Bob, and she now wants to spend 1.5 bitcoin to Eve, and 0.5 bitcon to
+Robert.
+\newline
+Alice need to create first the 1.5 bitcoin out of the 2 bitcoins she received from Bob. 
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.40]{/home/emmanuel/Documents/masterThesis/doc/ressources/transaction_1,5coins.png}
+\caption{1,5-coin transaction}
+\label{}
+\end{figure}
+She creates a \emph{Pay} transaction with two recipients: Eve with an amount of 1.5 bitcoin and herself with the rest of the 2 bitcoins, here 0.5 bitcoin. She points to the 2-bitcoin transaction hash between her and Bob, signs this transaction and now can transfer 1.5 bitcoin to Eve. Alice should follow this procedure, because in Bitcoin, a transaction recipient must be consumed entirely. That is the reason why Alice is paying back 0.5 bitcoin for herself. Finnally, she can also send this 0.5 bitcoin to Robert.
+\paragraph{}
+The third and last problem is called the double-spent transaction.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.40]{/home/emmanuel/Documents/masterThesis/doc/ressources/double_spent_transaction.png}
+\caption{Double-spent transaction}
+\label{}
+\end{figure}
+\paragraph{}
+The double expense consists of issuing two transactions in the same time that spend the same credit: the first transaction is issued to pay a first recipient Eve, the second transaction is issued to pay an accomplice Robert or the hacker himself, in order to recover the amount spent. In order for the fraud not to be immediately discovered, these two transactions must coexist in two competing instances of the blockchain. The second instance must become the longest blockchain (See X.X.X.X block section) for the fraud to succeed. In this case, the first transaction can not be recycled into another block because it will be considered invalid because it is incompatible with the second transaction and will ultimately be rejected. If, between the two transactions, the first recipient has accepted the payment, he will not find out afterwards that this transaction has been rejected. Since the participants are anonymous, they can not turn against the fraudster.
+
+\paragraph{}
+This scenario is possible due to the dissemination of a transaction. Each transaction needs to be transfered to all nodes. If the blockchain was a complete instataneous system, and transactions were sent instantly, the double-spent problem can be solved by taking only the transaction which comes first (to Eve), and state the second transaction (to Robert) invalid. Unfortunately, Internet network has some latency, and maybe a node located in Australia received the transaction intended to Robert first. The central key point of Bitcoin is to find a concensus without any central entity, and without trusting every node, because some people may be malicious. One concensus per transactions would create tremendous amount of work. Hence the creation of blocks.   
+
+\subsubsection{Block}
+\paragraph{}
+The simplified internal structure of a block is composed of a \emph{Prev\_ Hash}, \emph{TimeStamp}, \emph{Tx\_Root\_Hash} and \emph{Nonce}. 
+
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=0.39]{/home/emmanuel/Documents/masterThesis/doc/ressources/block.png}
+\caption{Internal structure of one block}
+\label{}
+\end{figure}
+
+\begin{itemize}
+  \setlength\itemsep{0em}
+
+  \item \emph{Prev\_ Hash}: The reference to the previous block stored as a SHA-256 hash. This creates the backlink
+  \item \emph{TimeStamp}: It indicates when the block is created (Unix time)
+  \item \emph{Tx\_Root\_Hash}: It is the merkle tree root hash of all transactions currently stored in this block (SHA-256)
+  \item \emph{Nonce}: It is a 4-byte hash which is an answer to a difficult-to-solve mathematical puzzle (equation).This answer is unique to each block (see Nonce section) 
+
 \end{itemize}
 
-
--problem \#1: give coin at the same time 
+\textbf{More details???????????}
 \newline
--problem \#2: How can we split a coin 
-\newline
--problem \#3: problem of the double spent 
-- propagation of a transaction to all the nodes
-\newline
-\subsubsection{Block}
-- detail of a block
-\newline
-- example of a block
-\newline
-- pseudo code of what are all the steps to confirm one block
+By agreeing on a block, all miners agree on the flow of transactions, and which ones are correct or not.
 \newline
 - Fork
 \newline
@@ -153,8 +211,10 @@ A transaction is the record of transfering money from a person A to a person B, 
 - transaction every 10 mins
 \newline
 -how much transaction per block
-\subsubsection{Miners \& Proof of Work}
+\subsubsection{Miners, Proof of Work \&  Nonce}
 
+- pseudo code of what are all the steps to confirm one block
+- proof of work
 \subsubsection{Nounce}
 - complexity varies
 \newline
@@ -165,6 +225,7 @@ A transaction is the record of transfering money from a person A to a person B, 
 - pseudo code how to resolve a hash
 \newline
 - example of a nounce
+\subsubsection{Fork}
 \subsubsection{Payment}
 - Evolution of the difficulty
 \newline
@@ -180,11 +241,13 @@ A transaction is the record of transfering money from a person A to a person B, 
 - really expensive to store data
 \newline
 - everything is public
+\subsubsection{Blocks}
 \subsubsection{GHOST}
 - orphan blocks
 - godfather blocks
 - scheme
- \subsubsection{Accounts}
+\subsubsection{Transaction}
+\subsubsection{Accounts}
  - ID
  \newline
  - balance
