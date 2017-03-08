@@ -5,3 +5,15 @@ R.C. Merkle, « Protocols for public key cryptosystems, » In Proc. 1980 Symposi
 http://www.coindesk.com/bitcoin-miners-ditch-ghash-io-pool-51-attack/
 
 https://bitcoin.org/bitcoin.pdf
+
+https://blog.blockchain.com/2016/03/16/introducing-dynamic-fees/
+
+https://github.com/ethereum/wiki/wiki/Block-Protocol-2.0
+
+ethereum white paper
+
+https://kobl.one/blog/create-full-ethereum-keypair-and-address/
+
+http://www.prnewswire.com/news-releases/distributed-cloud-storage-provider-storj-labs-raises-3-million-300412316.html
+
+
