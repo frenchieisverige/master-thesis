@@ -84,9 +84,9 @@ browserify.org
 
 ## Authors
 
-* **Emmanuel SCHWARTZ** - *Initial work* - [PurpleBooth](https://github.com/frenchieisverige/)
+* **Emmanuel SCHWARTZ** - *Initial work* - [Decentralizes Document Management](https://github.com/frenchieisverige/)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
 
 
 
