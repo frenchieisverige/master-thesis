@@ -84,7 +84,7 @@ browserify.org
 
 ## Authors
 
-* **Emmanuel SCHWARTZ** - *Initial work* - [Decentralizes Document Management](https://github.com/frenchieisverige/)
+* **Emmanuel SCHWARTZ** - *Initial work* - [Decentralized Document Management](https://github.com/frenchieisverige/)
 
 
 
