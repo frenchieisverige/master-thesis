@@ -73,7 +73,6 @@ Enter the address of the *User.sol* smart contract address, hit Go! and voilà y
 ![alt tag](https://github.com/frenchieisverige/master-thesis/blob/master/doc/ressources/webpage_example.png)
 
 
-```
 ## Built With
 
 * [node.js](https://nodejs.org/en/) - JavaScript runtime
