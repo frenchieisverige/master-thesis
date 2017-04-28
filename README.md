@@ -16,17 +16,26 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo apt-get install -y build-essential
 ```
-Once NodeJS intalled, some packages such as IPFS, testRPC, Web3 and Ethereum JS.
+Then, TestRPC can be installed in order to emulate a blockchain:
 ```
---- TestRPC ---
-npm install -g ethereumjs-testrpc
---- EthereumJS ---
-npm install ethereumjs-blockchain
---- web3 ---
-npm install web3
---- IPFS ---
-npm install ipfs --global
+sudo npm install -g ethereumjs-testrpc
 ```
+To interact with this blockchain, the Web3 API needs to be installed:
+```
+sudo npm install web3@0.18.2
+```
+For smart contracts compilation, solc is used:
+```
+sudo npm install solc@0.4.8
+```
+Moreover, IPFS needs to be installed to uplaod a document to a decentralized storage provider. First globally, in order to run a daemon:
+```
+sudo npm install ipfs --global
+```
+Secondly, the IPFS-JS API locally, in order to interact with it:
+```
+sudo npm install --save ipfs-api
+``` 
 
 ### Installing
 
